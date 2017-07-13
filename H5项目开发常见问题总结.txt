@@ -156,3 +156,22 @@ a,button,input,textarea {
 }   
 也可以*{ -webkit-tap-highlight-color: rgba(0,0,0,0); }
 
+美化表单元素
+使用appearance改变webkit浏览器的默认外观
+input,select { -webkit-appearance:none; appearance: none; }
+
+winphone下，使用伪元素改变表单元素默认外观
+1.禁用select默认箭头，::-ms-expand修改表单控件下拉箭头，设置隐藏并使用背景图片来修饰
+select::-ms-expand { display:none; }
+2.禁用radio和checkbox默认样式，::-ms-check修改表单复选框或单选框默认图标，设置隐藏并使用背景图片来修饰
+input[type=radio]::-ms-check,
+input[type=checkbox]::-ms-check { display:none; }
+3.禁用pc端表单输入框默认清除按钮，::-ms-clear修改清除按钮，设置隐藏并使用背景图片来修饰
+input[type=text]::-ms-clear,
+input[type=tel]::-ms-clear,
+input[type=number]::-ms-clear { display:none; }
+
+移动端字体单位font-size
+如需适配多种移动设备，建议使用rem
+设置12px字体 在rem前要加上对应的px值，解决不支持rem的浏览器的兼容问题，做到优雅降级
+body { font-size:12px; font-size:1.2rem; }
